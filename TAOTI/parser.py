@@ -2,12 +2,10 @@ from typing import NewType, TypeAlias
 
 from exceptions import UnexpectedCloseParen, UnexpectedEndOfSource
 
-#Symbol = NewType('Symbol', str)
-
-Symbol: TypeAlias = str
+Symbol = NewType('Symbol', str)
 Number: TypeAlias = int | float
 Atom: TypeAlias = Number | Symbol
-Expression: TypeAlias = Atom | list
+Expression: TypeAlias = Atom | list['Expression']
 
 
 def parse(source: str) -> Expression:
