@@ -5,10 +5,10 @@ from exceptions import UnexpectedCloseParen, UnexpectedEndOfSource
 Symbol = NewType('Symbol', str)
 Number: TypeAlias = int | float
 Atom: TypeAlias = Number | Symbol
-Expression: TypeAlias = Atom | list['Expression']
+Expression: TypeAlias = Atom | list
 
 
-def parse(source: str) -> Expression:
+def read(source: str) -> Expression:
     """Read a Scheme expression from a string."""
     return read_from_tokens(tokenize(source))
 

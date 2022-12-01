@@ -1,6 +1,6 @@
 from pytest import mark
 
-from parser import parse, Expression
+from reader import read, Expression
 
 
 @mark.parametrize(
@@ -15,5 +15,5 @@ from parser import parse, Expression
     ],
 )
 def test_parse(source: str, expected: Expression) -> None:
-    got = parse(source)
+    got = read(source)
     assert got == expected
